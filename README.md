@@ -10,7 +10,7 @@ This project implements a RESTful API for managing a product catalog using Sprin
 
 - **Framework**: Spring Boot 4.0.5
 - **Build Tool**: Gradle
-- **Language**: Java 25+
+- **Language**: Java 22+
 - **Dependencies**: Spring Web, Lombok
 
 ### Project Structure
@@ -41,7 +41,7 @@ EcommerceApi/
 
 ### Prerequisites
 
-- Java Development Kit (JDK) 25 or higher
+- Java Development Kit (JDK) 22 or higher
 - Gradle (optional - wrapper is included)
 
 ### Running the Application
@@ -378,3 +378,84 @@ This project is for educational purposes as part of Laboratory 7 - HTTP Fundamen
 ## Version
 
 1.0.0 - Initial Release
+
+## Input Validation Rules
+
+- **Product Name**: Required, minimum 1 character
+- **Price**: Must be a positive number (> 0)
+- **Category**: Required, non-empty
+- **Stock Quantity**: Must be non-negative (>= 0)
+
+## HTTP Status Codes Used
+
+| Status Code | Usage |
+|-------------|-------|
+| 200 OK | Successful GET requests |
+| 201 Created | Successful POST (creation) |
+| 204 No Content | Successful DELETE |
+| 400 Bad Request | Invalid request data |
+| 404 Not Found | Product not found |
+| 500 Internal Server Error | Server error |
+
+## Known Limitations
+
+- **In-Memory Storage**: Data is stored in a temporary ArrayList and will be lost when the application restarts
+- **No Database**: No persistent storage mechanism implemented
+- **No Authentication**: API endpoints are not secured
+- **No Pagination**: All products are returned in a single response
+
+## Git Workflow
+
+### Branch Strategy
+- `main` - Production-ready code
+- `feature/*` - Feature development branches
+
+### Commit Message Format
+```
+<Type>: <action phrase describing what was implemented>
+
+Examples:
+- feat: implemented product filtering by price range
+- fix: resolved getAllProducts() returning null values
+- chore: added sample product data initialization
+```
+
+### Common Git Commands
+```bash
+# Check status
+git status
+
+# Add changes
+git add .
+
+# Commit changes
+git commit -m "feat: implemented product CRUD operations"
+
+# Push to remote
+git push origin feature/product-api
+
+# Switch to main branch
+git checkout main
+
+# Merge feature branch
+git merge feature/product-api
+
+# Delete feature branch
+git branch -d feature/product-api
+```
+
+## Authors
+
+- **Kent Jeanne S. De Leon** - Primary Developer
+- **Keniel Drew D. De Asis** - Partner Developer
+
+## License
+
+This project is for educational purposes as part of Laboratory 7 - HTTP Fundamentals and Spring Boot.
+
+## Version
+
+1.0.0 - Initial Release
+=======
+# DELL-THOUGH
+>>>>>>> 6fc214e6e19e492a07f2cdeea25030dbc168bd59
